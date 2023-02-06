@@ -1,672 +1,792 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Hi! Its me, Aniket.</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	text-indent: -1.7em;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="9c5786bb-ef26-4354-963a-5816cbc06cdf" class="page sans"><header><h1 class="page-title">Hi! Its me, Aniket.</h1></header><div class="page-body"><h2 id="dc906a25-624f-4da4-9ac9-cfe04541e04f" class="">This is a journal where I keep track of all the artists I’ve experienced live.</h2><p id="29e66662-2125-48c9-be8d-a6cdf569ad08" class="">
-</p><p id="0bd991bc-5052-4056-97fd-d20d6672d20a" class="">
-</p><p id="dae22d7b-b0de-40e9-8a91-8b6200c836a0" class="">Comprehensive list, the ones in RED are the headliner bands:</p><ol type="1" id="2e206211-da22-411b-b489-ff74e91775de" class="block-color-red numbered-list" start="1"><li>Slipknot</li></ol><ol type="1" id="9976548c-856d-4006-aacc-37deb35643af" class="numbered-list" start="2"><li>Gojira</li></ol><ol type="1" id="09172704-919b-426b-92e4-fb39d39c0f8b" class="numbered-list" start="3"><li>Volbeat</li></ol><ol type="1" id="5cee7efc-8c8a-444f-bd4f-da79a54700a7" class="numbered-list" start="4"><li>Behemoth</li></ol><ol type="1" id="18ba7ea8-668c-467b-97cf-5b8b652e7422" class="block-color-red numbered-list" start="5"><li>Kygo</li></ol><ol type="1" id="85534ef0-e3c0-447b-9e68-57ca7842d508" class="block-color-red numbered-list" start="6"><li>Illenium</li></ol><ol type="1" id="f19957e0-3b97-4139-a4fd-4ae96bc8aee1" class="block-color-red numbered-list" start="7"><li>Calvin Harris</li></ol><ol type="1" id="fe6dafa0-5364-4ad9-8f03-3f544980511d" class="block-color-red numbered-list" start="8"><li>Born of Osiris</li></ol><ol type="1" id="9d859bd0-3e29-4022-a392-41d857c29e35" class="numbered-list" start="9"><li>Bad Omens</li></ol><ol type="1" id="96a355d9-5848-4067-82b4-4fa7dda78c8c" class="numbered-list" start="10"><li>Spite</li></ol><ol type="1" id="6c76a676-95e3-4481-b3a9-61b58ea5bcd7" class="numbered-list" start="11"><li>Kingdom of Giants</li></ol><ol type="1" id="46b4bdd9-fa38-480f-aff7-7d6d5a7cf20e" class="block-color-red numbered-list" start="12"><li>Babymetal</li></ol><ol type="1" id="cb614425-a0ad-4dc0-ad1d-9487ebceee37" class="numbered-list" start="13"><li>Avatar</li></ol><ol type="1" id="d93e015f-e100-496b-abbf-053b594473e4" class="block-color-red numbered-list" start="14"><li>Our Last Night</li></ol><ol type="1" id="f2655560-059b-4b69-bfd2-c0bcbe5c2077" class="numbered-list" start="15"><li>I See Stars</li></ol><ol type="1" id="ecdee391-47bd-4917-970a-d14bb25ae64b" class="numbered-list" start="16"><li>The Word Alive</li></ol><ol type="1" id="65d108e2-21d1-4800-93a3-bef35acd94fa" class="numbered-list" start="17"><li>Ashland</li></ol><ol type="1" id="3aac87e1-359c-4d54-b287-519c3573bc5c" class="block-color-red numbered-list" start="18"><li>Beartooth</li></ol><ol type="1" id="0ef50244-9271-41ff-a844-0ba4aa7917cc" class="numbered-list" start="19"><li>Motionless in White</li></ol><ol type="1" id="8d182545-c352-4c7c-92f4-9018fe1d2678" class="numbered-list" start="20"><li>Stick to Your Guns</li></ol><ol type="1" id="147bda03-ffa6-4c5d-a45e-698852d92a17" class="numbered-list" start="21"><li>Nothing Left</li></ol><ol type="1" id="46c0b571-2979-41b4-a40b-47594bd36c1f" class="block-color-red numbered-list" start="22"><li>The Black Dahlia Murder</li></ol><ol type="1" id="0690cce4-56f7-47de-bab6-7dab87a9c034" class="numbered-list" start="23"><li>Carnifex</li></ol><ol type="1" id="93b68d69-68ab-4d60-93c0-22c6057cfe22" class="numbered-list" start="24"><li>Rivers of Nihil</li></ol><ol type="1" id="18048434-5151-4773-9192-f977d0cf709e" class="numbered-list" start="25"><li>Undeath</li></ol><ol type="1" id="cebbf740-8a18-424c-9c09-040ed797aa4f" class="block-color-red numbered-list" start="26"><li>In This Moment</li></ol><ol type="1" id="01af2a81-0d79-47c7-badc-3544da38fa5d" class="block-color-red numbered-list" start="27"><li>Black Veil Brides</li></ol><ol type="1" id="d3d74cdd-468c-4856-b9c8-f3e766f19ca4" class="numbered-list" start="28"><li>Ded</li></ol><ol type="1" id="9541db21-e6f6-4497-84a3-e1a218b9a2c4" class="block-color-red numbered-list" start="29"><li>August Burns Red</li></ol><ol type="1" id="3b4162cb-2968-477d-930f-44cfdfbe4544" class="numbered-list" start="30"><li>Fit For A King</li></ol><ol type="1" id="4261710f-feb4-4d8c-85a9-414c360dad86" class="numbered-list" start="31"><li>Erra</li></ol><ol type="1" id="fa703604-422e-4ac7-8c7e-85449b96b192" class="numbered-list" start="32"><li>Like Moths To Flames</li></ol><ol type="1" id="d94c393f-4cf9-4e42-a811-58ea8dbad5fa" class="numbered-list" start="33"><li>Molten</li></ol><ol type="1" id="8810e7a1-2f64-4cd8-9e95-d03520fcd18b" class="numbered-list" start="34"><li>Deathgrave</li></ol><ol type="1" id="e0263808-3bdf-4aa7-9556-97f349cca7c3" class="numbered-list" start="35"><li>Nite</li></ol><ol type="1" id="7049f553-9fff-4a91-b933-c8673bd466d5" class="numbered-list" start="36"><li>Cartilage</li></ol><ol type="1" id="2f50ffa2-4098-4938-89d3-d9a3ab75e8ba" class="block-color-red numbered-list" start="37"><li>System of a down</li></ol><ol type="1" id="73f4186f-22b4-4501-8018-c4c608959687" class="block-color-red numbered-list" start="38"><li>Korn</li></ol><ol type="1" id="d49fe643-e044-493f-b3bd-168f05cbdf02" class="numbered-list" start="39"><li>Jabbawockeez</li></ol><ol type="1" id="69e3910c-fa8b-4efa-ab00-470941c4e1e0" class="block-color-red numbered-list" start="40"><li>Cradle of Filth</li></ol><ol type="1" id="0150218b-f36c-41fe-8bce-a90003ba39ce" class="numbered-list" start="41"><li>Once Human</li></ol><ol type="1" id="63593e71-47de-4450-a92e-c175fc093b32" class="block-color-red numbered-list" start="42"><li>Steve Aoki</li></ol><ol type="1" id="f710bbe5-f4fc-4a8e-b882-ebc20945b953" class="block-color-red numbered-list" start="43"><li>Killswitch Engage</li></ol><ol type="1" id="4fdd8540-2cdd-4035-bcd8-4bb2085b7968" class="numbered-list" start="44"><li>August Burns Red</li></ol><ol type="1" id="9b269058-1bf7-4538-b299-a95fd47827fb" class="numbered-list" start="45"><li>Light the torch</li></ol><ol type="1" id="9432624c-ed94-4a95-9969-2d03227f2bf8" class="block-color-red numbered-list" start="46"><li>Underoath</li></ol><ol type="1" id="2596c9ef-286f-438e-8104-2cebec998b4c" class="numbered-list" start="47"><li>Bad Omens</li></ol><ol type="1" id="d96f8b02-583f-4b73-98f8-41bea3cfae06" class="numbered-list" start="48"><li>Spiritbox</li></ol><ol type="1" id="65078e40-905e-4720-95b2-a6dab0c96e8d" class="numbered-list" start="49"><li>Stray From the Path</li></ol><ol type="1" id="969fac46-30a3-419c-b9f2-2f5862c4786c" class="block-color-red numbered-list" start="50"><li>Black Veil Brides</li></ol><ol type="1" id="919926ff-167e-40e3-8083-944315ba83bd" class="block-color-red numbered-list" start="51"><li>Motionless In White</li></ol><ol type="1" id="f6e3abbd-9449-43fc-8107-52ed253f38c2" class="block-color-red numbered-list" start="52"><li>Nine Inch Kills</li></ol><ol type="1" id="6449b128-9888-4863-97b4-2aa064fa5a87" class="numbered-list" start="53"><li>Lilith Czar</li></ol><ol type="1" id="6e176f67-89dd-4c88-8318-97cab6e32e4a" class="block-color-red numbered-list" start="54"><li>Sum41</li></ol><ol type="1" id="1e20ddf0-3be4-4768-87bf-2d7522be9628" class="numbered-list" start="55"><li>Simple Plan</li></ol><ol type="1" id="d8ed5913-bd9c-414a-98d2-7e1c5be64269" class="numbered-list" start="56"><li>Magnolia Park</li></ol><ol type="1" id="8dec4a00-8971-418d-b9de-810f0cba27bd" class="block-color-red numbered-list" start="57"><li>Rammstein</li></ol><ol type="1" id="9b131833-90d4-4b7e-b57c-38a184b6379f" class="block-color-red numbered-list" start="58"><li>Sabaton</li></ol><ol type="1" id="55ddf7a3-86d2-4f9a-bf48-0f69f6f6a59a" class="numbered-list" start="59"><li>Epica</li></ol><ol type="1" id="354c7df3-7629-4357-9073-89d66127c749" class="block-color-red numbered-list" start="60"><li>BandMaid</li></ol><ol type="1" id="19632170-ed33-4421-92c3-dbebd0971885" class="block-color-red numbered-list" start="61"><li>Parkway Drive</li></ol><ol type="1" id="85f57a34-2464-4199-810f-4810005b9dfd" class="numbered-list" start="62"><li>Memphis May Fire</li></ol><ol type="1" id="da388ed7-92dc-413f-bf28-211df13c55b4" class="numbered-list" start="63"><li>Currents</li></ol><p id="8118eee4-4925-4e91-939c-a8722ab45605" class="">
-</p></div></article></body></html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <title>Hi! Its me, Aniket.</title>
+      <style>
+         /* cspell:disable-file */
+         /* webkit printing magic: print all background colors */
+         html {
+         -webkit-print-color-adjust: exact;
+         }
+         * {
+         box-sizing: border-box;
+         -webkit-print-color-adjust: exact;
+         }
+         html,
+         body {
+         margin: 0;
+         padding: 0;
+         }
+         @media only screen {
+         body {
+         margin: 2em auto;
+         max-width: 900px;
+         color: rgb(55, 53, 47);
+         }
+         }
+         body {
+         line-height: 1.5;
+         white-space: pre-wrap;
+         }
+         a,
+         a.visited {
+         color: inherit;
+         text-decoration: underline;
+         }
+         .pdf-relative-link-path {
+         font-size: 80%;
+         color: #444;
+         }
+         h1,
+         h2,
+         h3 {
+         letter-spacing: -0.01em;
+         line-height: 1.2;
+         font-weight: 600;
+         margin-bottom: 0;
+         }
+         .page-title {
+         font-size: 2.5rem;
+         font-weight: 700;
+         margin-top: 0;
+         margin-bottom: 0.75em;
+         }
+         h1 {
+         font-size: 1.875rem;
+         margin-top: 1.875rem;
+         }
+         h2 {
+         font-size: 1.5rem;
+         margin-top: 1.5rem;
+         }
+         h3 {
+         font-size: 1.25rem;
+         margin-top: 1.25rem;
+         }
+         .source {
+         border: 1px solid #ddd;
+         border-radius: 3px;
+         padding: 1.5em;
+         word-break: break-all;
+         }
+         .callout {
+         border-radius: 3px;
+         padding: 1rem;
+         }
+         figure {
+         margin: 1.25em 0;
+         page-break-inside: avoid;
+         }
+         figcaption {
+         opacity: 0.5;
+         font-size: 85%;
+         margin-top: 0.5em;
+         }
+         mark {
+         background-color: transparent;
+         }
+         .indented {
+         padding-left: 1.5em;
+         }
+         hr {
+         background: transparent;
+         display: block;
+         width: 100%;
+         height: 1px;
+         visibility: visible;
+         border: none;
+         border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+         }
+         img {
+         max-width: 100%;
+         }
+         @media only print {
+         img {
+         max-height: 100vh;
+         object-fit: contain;
+         }
+         }
+         @page {
+         margin: 1in;
+         }
+         .collection-content {
+         font-size: 0.875rem;
+         }
+         .column-list {
+         display: flex;
+         justify-content: space-between;
+         }
+         .column {
+         padding: 0 1em;
+         }
+         .column:first-child {
+         padding-left: 0;
+         }
+         .column:last-child {
+         padding-right: 0;
+         }
+         .table_of_contents-item {
+         display: block;
+         font-size: 0.875rem;
+         line-height: 1.3;
+         padding: 0.125rem;
+         }
+         .table_of_contents-indent-1 {
+         margin-left: 1.5rem;
+         }
+         .table_of_contents-indent-2 {
+         margin-left: 3rem;
+         }
+         .table_of_contents-indent-3 {
+         margin-left: 4.5rem;
+         }
+         .table_of_contents-link {
+         text-decoration: none;
+         opacity: 0.7;
+         border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+         }
+         table,
+         th,
+         td {
+         border: 1px solid rgba(55, 53, 47, 0.09);
+         border-collapse: collapse;
+         }
+         table {
+         border-left: none;
+         border-right: none;
+         }
+         th,
+         td {
+         font-weight: normal;
+         padding: 0.25em 0.5em;
+         line-height: 1.5;
+         min-height: 1.5em;
+         text-align: left;
+         }
+         th {
+         color: rgba(55, 53, 47, 0.6);
+         }
+         ol,
+         ul {
+         margin: 0;
+         margin-block-start: 0.6em;
+         margin-block-end: 0.6em;
+         }
+         li > ol:first-child,
+         li > ul:first-child {
+         margin-block-start: 0.6em;
+         }
+         ul > li {
+         list-style: disc;
+         }
+         ul.to-do-list {
+         text-indent: -1.7em;
+         }
+         ul.to-do-list > li {
+         list-style: none;
+         }
+         .to-do-children-checked {
+         text-decoration: line-through;
+         opacity: 0.375;
+         }
+         ul.toggle > li {
+         list-style: none;
+         }
+         ul {
+         padding-inline-start: 1.7em;
+         }
+         ul > li {
+         padding-left: 0.1em;
+         }
+         ol {
+         padding-inline-start: 1.6em;
+         }
+         ol > li {
+         padding-left: 0.2em;
+         }
+         .mono ol {
+         padding-inline-start: 2em;
+         }
+         .mono ol > li {
+         text-indent: -0.4em;
+         }
+         .toggle {
+         padding-inline-start: 0em;
+         list-style-type: none;
+         }
+         /* Indent toggle children */
+         .toggle > li > details {
+         padding-left: 1.7em;
+         }
+         .toggle > li > details > summary {
+         margin-left: -1.1em;
+         }
+         .selected-value {
+         display: inline-block;
+         padding: 0 0.5em;
+         background: rgba(206, 205, 202, 0.5);
+         border-radius: 3px;
+         margin-right: 0.5em;
+         margin-top: 0.3em;
+         margin-bottom: 0.3em;
+         white-space: nowrap;
+         }
+         .collection-title {
+         display: inline-block;
+         margin-right: 1em;
+         }
+         .simple-table {
+         margin-top: 1em;
+         font-size: 0.875rem;
+         empty-cells: show;
+         }
+         .simple-table td {
+         height: 29px;
+         min-width: 120px;
+         }
+         .simple-table th {
+         height: 29px;
+         min-width: 120px;
+         }
+         .simple-table-header-color {
+         background: rgb(247, 246, 243);
+         color: black;
+         }
+         .simple-table-header {
+         font-weight: 500;
+         }
+         time {
+         opacity: 0.5;
+         }
+         .icon {
+         display: inline-block;
+         max-width: 1.2em;
+         max-height: 1.2em;
+         text-decoration: none;
+         vertical-align: text-bottom;
+         margin-right: 0.5em;
+         }
+         img.icon {
+         border-radius: 3px;
+         }
+         .user-icon {
+         width: 1.5em;
+         height: 1.5em;
+         border-radius: 100%;
+         margin-right: 0.5rem;
+         }
+         .user-icon-inner {
+         font-size: 0.8em;
+         }
+         .text-icon {
+         border: 1px solid #000;
+         text-align: center;
+         }
+         .page-cover-image {
+         display: block;
+         object-fit: cover;
+         width: 100%;
+         max-height: 30vh;
+         }
+         .page-header-icon {
+         font-size: 3rem;
+         margin-bottom: 1rem;
+         }
+         .page-header-icon-with-cover {
+         margin-top: -0.72em;
+         margin-left: 0.07em;
+         }
+         .page-header-icon img {
+         border-radius: 3px;
+         }
+         .link-to-page {
+         margin: 1em 0;
+         padding: 0;
+         border: none;
+         font-weight: 500;
+         }
+         p > .user {
+         opacity: 0.5;
+         }
+         td > .user,
+         td > time {
+         white-space: nowrap;
+         }
+         input[type="checkbox"] {
+         transform: scale(1.5);
+         margin-right: 0.6em;
+         vertical-align: middle;
+         }
+         p {
+         margin-top: 0.5em;
+         margin-bottom: 0.5em;
+         }
+         .image {
+         border: none;
+         margin: 1.5em 0;
+         padding: 0;
+         border-radius: 0;
+         text-align: center;
+         }
+         .code,
+         code {
+         background: rgba(135, 131, 120, 0.15);
+         border-radius: 3px;
+         padding: 0.2em 0.4em;
+         border-radius: 3px;
+         font-size: 85%;
+         tab-size: 2;
+         }
+         code {
+         color: #eb5757;
+         }
+         .code {
+         padding: 1.5em 1em;
+         }
+         .code-wrap {
+         white-space: pre-wrap;
+         word-break: break-all;
+         }
+         .code > code {
+         background: none;
+         padding: 0;
+         font-size: 100%;
+         color: inherit;
+         }
+         blockquote {
+         font-size: 1.25em;
+         margin: 1em 0;
+         padding-left: 1em;
+         border-left: 3px solid rgb(55, 53, 47);
+         }
+         .bookmark {
+         text-decoration: none;
+         max-height: 8em;
+         padding: 0;
+         display: flex;
+         width: 100%;
+         align-items: stretch;
+         }
+         .bookmark-title {
+         font-size: 0.85em;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         height: 1.75em;
+         white-space: nowrap;
+         }
+         .bookmark-text {
+         display: flex;
+         flex-direction: column;
+         }
+         .bookmark-info {
+         flex: 4 1 180px;
+         padding: 12px 14px 14px;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         }
+         .bookmark-image {
+         width: 33%;
+         flex: 1 1 180px;
+         display: block;
+         position: relative;
+         object-fit: cover;
+         border-radius: 1px;
+         }
+         .bookmark-description {
+         color: rgba(55, 53, 47, 0.6);
+         font-size: 0.75em;
+         overflow: hidden;
+         max-height: 4.5em;
+         word-break: break-word;
+         }
+         .bookmark-href {
+         font-size: 0.75em;
+         margin-top: 0.25em;
+         }
+         .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+         .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+         .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+         .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+         .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+         .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+         .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+         .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+         .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+         .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+         .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+         .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+         .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+         .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+         .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+         .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+         .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+         .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+         .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+         .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+         .highlight-default {
+         color: rgba(55, 53, 47, 1);
+         }
+         .highlight-gray {
+         color: rgba(120, 119, 116, 1);
+         fill: rgba(120, 119, 116, 1);
+         }
+         .highlight-brown {
+         color: rgba(159, 107, 83, 1);
+         fill: rgba(159, 107, 83, 1);
+         }
+         .highlight-orange {
+         color: rgba(217, 115, 13, 1);
+         fill: rgba(217, 115, 13, 1);
+         }
+         .highlight-yellow {
+         color: rgba(203, 145, 47, 1);
+         fill: rgba(203, 145, 47, 1);
+         }
+         .highlight-teal {
+         color: rgba(68, 131, 97, 1);
+         fill: rgba(68, 131, 97, 1);
+         }
+         .highlight-blue {
+         color: rgba(51, 126, 169, 1);
+         fill: rgba(51, 126, 169, 1);
+         }
+         .highlight-purple {
+         color: rgba(144, 101, 176, 1);
+         fill: rgba(144, 101, 176, 1);
+         }
+         .highlight-pink {
+         color: rgba(193, 76, 138, 1);
+         fill: rgba(193, 76, 138, 1);
+         }
+         .highlight-red {
+         color: rgba(212, 76, 71, 1);
+         fill: rgba(212, 76, 71, 1);
+         }
+         .highlight-gray_background {
+         background: rgba(241, 241, 239, 1);
+         }
+         .highlight-brown_background {
+         background: rgba(244, 238, 238, 1);
+         }
+         .highlight-orange_background {
+         background: rgba(251, 236, 221, 1);
+         }
+         .highlight-yellow_background {
+         background: rgba(251, 243, 219, 1);
+         }
+         .highlight-teal_background {
+         background: rgba(237, 243, 236, 1);
+         }
+         .highlight-blue_background {
+         background: rgba(231, 243, 248, 1);
+         }
+         .highlight-purple_background {
+         background: rgba(244, 240, 247, 0.8);
+         }
+         .highlight-pink_background {
+         background: rgba(249, 238, 243, 0.8);
+         }
+         .highlight-red_background {
+         background: rgba(253, 235, 236, 1);
+         }
+         .block-color-default {
+         color: inherit;
+         fill: inherit;
+         }
+         .block-color-gray {
+         color: rgba(120, 119, 116, 1);
+         fill: rgba(120, 119, 116, 1);
+         }
+         .block-color-brown {
+         color: rgba(159, 107, 83, 1);
+         fill: rgba(159, 107, 83, 1);
+         }
+         .block-color-orange {
+         color: rgba(217, 115, 13, 1);
+         fill: rgba(217, 115, 13, 1);
+         }
+         .block-color-yellow {
+         color: rgba(203, 145, 47, 1);
+         fill: rgba(203, 145, 47, 1);
+         }
+         .block-color-teal {
+         color: rgba(68, 131, 97, 1);
+         fill: rgba(68, 131, 97, 1);
+         }
+         .block-color-blue {
+         color: rgba(51, 126, 169, 1);
+         fill: rgba(51, 126, 169, 1);
+         }
+         .block-color-purple {
+         color: rgba(144, 101, 176, 1);
+         fill: rgba(144, 101, 176, 1);
+         }
+         .block-color-pink {
+         color: rgba(193, 76, 138, 1);
+         fill: rgba(193, 76, 138, 1);
+         }
+         .block-color-red {
+         color: rgba(212, 76, 71, 1);
+         fill: rgba(212, 76, 71, 1);
+         }
+         .block-color-gray_background {
+         background: rgba(241, 241, 239, 1);
+         }
+         .block-color-brown_background {
+         background: rgba(244, 238, 238, 1);
+         }
+         .block-color-orange_background {
+         background: rgba(251, 236, 221, 1);
+         }
+         .block-color-yellow_background {
+         background: rgba(251, 243, 219, 1);
+         }
+         .block-color-teal_background {
+         background: rgba(237, 243, 236, 1);
+         }
+         .block-color-blue_background {
+         background: rgba(231, 243, 248, 1);
+         }
+         .block-color-purple_background {
+         background: rgba(244, 240, 247, 0.8);
+         }
+         .block-color-pink_background {
+         background: rgba(249, 238, 243, 0.8);
+         }
+         .block-color-red_background {
+         background: rgba(253, 235, 236, 1);
+         }
+         .select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+         .select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+         .select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+         .select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+         .select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+         .select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+         .select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+         .select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+         .select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+         .select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+         .checkbox {
+         display: inline-flex;
+         vertical-align: text-bottom;
+         width: 16;
+         height: 16;
+         background-size: 16px;
+         margin-left: 2px;
+         margin-right: 5px;
+         }
+         .checkbox-on {
+         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+         }
+         .checkbox-off {
+         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+         }
+      </style>
+   </head>
+   <body>
+      <article id="9c5786bb-ef26-4354-963a-5816cbc06cdf" class="page sans">
+         <header>
+            <h1 class="page-title">Hi! Its me, Aniket.</h1>
+         </header>
+         <div class="page-body">
+            <h2 id="dc906a25-624f-4da4-9ac9-cfe04541e04f" class="">This is a journal where I keep track of all the artists I’ve experienced live.</h2>
+            <p id="29e66662-2125-48c9-be8d-a6cdf569ad08" class=""></p>
+		 <iframe src="https://grid.is/embed/bands-BBZb_l4bR5iEyORwVnyrSg?p=p1cFkDsw0s" width="100%" height="500" frameborder="0" data-document-id="04165bfe-5e1b-4798-84c8-e470567cab4a"></iframe>
+<script type="text/javascript" src="https://grid.is/static/embed/v1/script.js"></script>
+            <p id="0bd991bc-5052-4056-97fd-d20d6672d20a" class=""></p>
+            <p id="dae22d7b-b0de-40e9-8a91-8b6200c836a0" class="">Comprehensive list, the ones in RED are the headliner bands:</p>
+            <ol type="1" id="2e206211-da22-411b-b489-ff74e91775de" class="block-color-red numbered-list" start="1">
+               <li>Slipknot</li>
+            </ol>
+            <ol type="1" id="9976548c-856d-4006-aacc-37deb35643af" class="numbered-list" start="2">
+               <li>Gojira</li>
+            </ol>
+            <ol type="1" id="09172704-919b-426b-92e4-fb39d39c0f8b" class="numbered-list" start="3">
+               <li>Volbeat</li>
+            </ol>
+            <ol type="1" id="5cee7efc-8c8a-444f-bd4f-da79a54700a7" class="numbered-list" start="4">
+               <li>Behemoth</li>
+            </ol>
+            <ol type="1" id="18ba7ea8-668c-467b-97cf-5b8b652e7422" class="block-color-red numbered-list" start="5">
+               <li>Kygo</li>
+            </ol>
+            <ol type="1" id="85534ef0-e3c0-447b-9e68-57ca7842d508" class="block-color-red numbered-list" start="6">
+               <li>Illenium</li>
+            </ol>
+            <ol type="1" id="f19957e0-3b97-4139-a4fd-4ae96bc8aee1" class="block-color-red numbered-list" start="7">
+               <li>Calvin Harris</li>
+            </ol>
+            <ol type="1" id="fe6dafa0-5364-4ad9-8f03-3f544980511d" class="block-color-red numbered-list" start="8">
+               <li>Born of Osiris</li>
+            </ol>
+            <ol type="1" id="9d859bd0-3e29-4022-a392-41d857c29e35" class="numbered-list" start="9">
+               <li>Bad Omens</li>
+            </ol>
+            <ol type="1" id="96a355d9-5848-4067-82b4-4fa7dda78c8c" class="numbered-list" start="10">
+               <li>Spite</li>
+            </ol>
+            <ol type="1" id="6c76a676-95e3-4481-b3a9-61b58ea5bcd7" class="numbered-list" start="11">
+               <li>Kingdom of Giants</li>
+            </ol>
+            <ol type="1" id="46b4bdd9-fa38-480f-aff7-7d6d5a7cf20e" class="block-color-red numbered-list" start="12">
+               <li>Babymetal</li>
+            </ol>
+            <ol type="1" id="cb614425-a0ad-4dc0-ad1d-9487ebceee37" class="numbered-list" start="13">
+               <li>Avatar</li>
+            </ol>
+            <ol type="1" id="d93e015f-e100-496b-abbf-053b594473e4" class="block-color-red numbered-list" start="14">
+               <li>Our Last Night</li>
+            </ol>
+            <ol type="1" id="f2655560-059b-4b69-bfd2-c0bcbe5c2077" class="numbered-list" start="15">
+               <li>I See Stars</li>
+            </ol>
+            <ol type="1" id="ecdee391-47bd-4917-970a-d14bb25ae64b" class="numbered-list" start="16">
+               <li>The Word Alive</li>
+            </ol>
+            <ol type="1" id="65d108e2-21d1-4800-93a3-bef35acd94fa" class="numbered-list" start="17">
+               <li>Ashland</li>
+            </ol>
+            <ol type="1" id="3aac87e1-359c-4d54-b287-519c3573bc5c" class="block-color-red numbered-list" start="18">
+               <li>Beartooth</li>
+            </ol>
+            <ol type="1" id="0ef50244-9271-41ff-a844-0ba4aa7917cc" class="numbered-list" start="19">
+               <li>Motionless in White</li>
+            </ol>
+            <ol type="1" id="8d182545-c352-4c7c-92f4-9018fe1d2678" class="numbered-list" start="20">
+               <li>Stick to Your Guns</li>
+            </ol>
+            <ol type="1" id="147bda03-ffa6-4c5d-a45e-698852d92a17" class="numbered-list" start="21">
+               <li>Nothing Left</li>
+            </ol>
+            <ol type="1" id="46c0b571-2979-41b4-a40b-47594bd36c1f" class="block-color-red numbered-list" start="22">
+               <li>The Black Dahlia Murder</li>
+            </ol>
+            <ol type="1" id="0690cce4-56f7-47de-bab6-7dab87a9c034" class="numbered-list" start="23">
+               <li>Carnifex</li>
+            </ol>
+            <ol type="1" id="93b68d69-68ab-4d60-93c0-22c6057cfe22" class="numbered-list" start="24">
+               <li>Rivers of Nihil</li>
+            </ol>
+            <ol type="1" id="18048434-5151-4773-9192-f977d0cf709e" class="numbered-list" start="25">
+               <li>Undeath</li>
+            </ol>
+            <ol type="1" id="cebbf740-8a18-424c-9c09-040ed797aa4f" class="block-color-red numbered-list" start="26">
+               <li>In This Moment</li>
+            </ol>
+            <ol type="1" id="01af2a81-0d79-47c7-badc-3544da38fa5d" class="block-color-red numbered-list" start="27">
+               <li>Black Veil Brides</li>
+            </ol>
+            <ol type="1" id="d3d74cdd-468c-4856-b9c8-f3e766f19ca4" class="numbered-list" start="28">
+               <li>Ded</li>
+            </ol>
+            <ol type="1" id="9541db21-e6f6-4497-84a3-e1a218b9a2c4" class="block-color-red numbered-list" start="29">
+               <li>August Burns Red</li>
+            </ol>
+            <ol type="1" id="3b4162cb-2968-477d-930f-44cfdfbe4544" class="numbered-list" start="30">
+               <li>Fit For A King</li>
+            </ol>
+            <ol type="1" id="4261710f-feb4-4d8c-85a9-414c360dad86" class="numbered-list" start="31">
+               <li>Erra</li>
+            </ol>
+            <ol type="1" id="fa703604-422e-4ac7-8c7e-85449b96b192" class="numbered-list" start="32">
+               <li>Like Moths To Flames</li>
+            </ol>
+            <ol type="1" id="d94c393f-4cf9-4e42-a811-58ea8dbad5fa" class="numbered-list" start="33">
+               <li>Molten</li>
+            </ol>
+            <ol type="1" id="8810e7a1-2f64-4cd8-9e95-d03520fcd18b" class="numbered-list" start="34">
+               <li>Deathgrave</li>
+            </ol>
+            <ol type="1" id="e0263808-3bdf-4aa7-9556-97f349cca7c3" class="numbered-list" start="35">
+               <li>Nite</li>
+            </ol>
+            <ol type="1" id="7049f553-9fff-4a91-b933-c8673bd466d5" class="numbered-list" start="36">
+               <li>Cartilage</li>
+            </ol>
+            <ol type="1" id="2f50ffa2-4098-4938-89d3-d9a3ab75e8ba" class="block-color-red numbered-list" start="37">
+               <li>System of a down</li>
+            </ol>
+            <ol type="1" id="73f4186f-22b4-4501-8018-c4c608959687" class="block-color-red numbered-list" start="38">
+               <li>Korn</li>
+            </ol>
+            <ol type="1" id="d49fe643-e044-493f-b3bd-168f05cbdf02" class="numbered-list" start="39">
+               <li>Jabbawockeez</li>
+            </ol>
+            <ol type="1" id="69e3910c-fa8b-4efa-ab00-470941c4e1e0" class="block-color-red numbered-list" start="40">
+               <li>Cradle of Filth</li>
+            </ol>
+            <ol type="1" id="0150218b-f36c-41fe-8bce-a90003ba39ce" class="numbered-list" start="41">
+               <li>Once Human</li>
+            </ol>
+            <ol type="1" id="63593e71-47de-4450-a92e-c175fc093b32" class="block-color-red numbered-list" start="42">
+               <li>Steve Aoki</li>
+            </ol>
+            <ol type="1" id="f710bbe5-f4fc-4a8e-b882-ebc20945b953" class="block-color-red numbered-list" start="43">
+               <li>Killswitch Engage</li>
+            </ol>
+            <ol type="1" id="4fdd8540-2cdd-4035-bcd8-4bb2085b7968" class="numbered-list" start="44">
+               <li>August Burns Red</li>
+            </ol>
+            <ol type="1" id="9b269058-1bf7-4538-b299-a95fd47827fb" class="numbered-list" start="45">
+               <li>Light the torch</li>
+            </ol>
+            <ol type="1" id="9432624c-ed94-4a95-9969-2d03227f2bf8" class="block-color-red numbered-list" start="46">
+               <li>Underoath</li>
+            </ol>
+            <ol type="1" id="2596c9ef-286f-438e-8104-2cebec998b4c" class="numbered-list" start="47">
+               <li>Bad Omens</li>
+            </ol>
+            <ol type="1" id="d96f8b02-583f-4b73-98f8-41bea3cfae06" class="numbered-list" start="48">
+               <li>Spiritbox</li>
+            </ol>
+            <ol type="1" id="65078e40-905e-4720-95b2-a6dab0c96e8d" class="numbered-list" start="49">
+               <li>Stray From the Path</li>
+            </ol>
+            <ol type="1" id="969fac46-30a3-419c-b9f2-2f5862c4786c" class="block-color-red numbered-list" start="50">
+               <li>Black Veil Brides</li>
+            </ol>
+            <ol type="1" id="919926ff-167e-40e3-8083-944315ba83bd" class="block-color-red numbered-list" start="51">
+               <li>Motionless In White</li>
+            </ol>
+            <ol type="1" id="f6e3abbd-9449-43fc-8107-52ed253f38c2" class="block-color-red numbered-list" start="52">
+               <li>Nine Inch Kills</li>
+            </ol>
+            <ol type="1" id="6449b128-9888-4863-97b4-2aa064fa5a87" class="numbered-list" start="53">
+               <li>Lilith Czar</li>
+            </ol>
+            <ol type="1" id="6e176f67-89dd-4c88-8318-97cab6e32e4a" class="block-color-red numbered-list" start="54">
+               <li>Sum41</li>
+            </ol>
+            <ol type="1" id="1e20ddf0-3be4-4768-87bf-2d7522be9628" class="numbered-list" start="55">
+               <li>Simple Plan</li>
+            </ol>
+            <ol type="1" id="d8ed5913-bd9c-414a-98d2-7e1c5be64269" class="numbered-list" start="56">
+               <li>Magnolia Park</li>
+            </ol>
+            <ol type="1" id="8dec4a00-8971-418d-b9de-810f0cba27bd" class="block-color-red numbered-list" start="57">
+               <li>Rammstein</li>
+            </ol>
+            <ol type="1" id="9b131833-90d4-4b7e-b57c-38a184b6379f" class="block-color-red numbered-list" start="58">
+               <li>Sabaton</li>
+            </ol>
+            <ol type="1" id="55ddf7a3-86d2-4f9a-bf48-0f69f6f6a59a" class="numbered-list" start="59">
+               <li>Epica</li>
+            </ol>
+            <ol type="1" id="354c7df3-7629-4357-9073-89d66127c749" class="block-color-red numbered-list" start="60">
+               <li>BandMaid</li>
+            </ol>
+            <ol type="1" id="19632170-ed33-4421-92c3-dbebd0971885" class="block-color-red numbered-list" start="61">
+               <li>Parkway Drive</li>
+            </ol>
+            <ol type="1" id="85f57a34-2464-4199-810f-4810005b9dfd" class="numbered-list" start="62">
+               <li>Memphis May Fire</li>
+            </ol>
+            <ol type="1" id="da388ed7-92dc-413f-bf28-211df13c55b4" class="numbered-list" start="63">
+               <li>Currents</li>
+            </ol>
+            <p id="8118eee4-4925-4e91-939c-a8722ab45605" class=""></p>
+         </div>
+      </article>
+   </body>
+</html>
