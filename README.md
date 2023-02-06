@@ -1,1 +1,0 @@
-# bondeanikets.github.io
